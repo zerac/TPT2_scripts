@@ -1,0 +1,29 @@
+
+:global int current_step
+:global int current_package
+:global int museum_package_id
+:global int package_executing
+:global int turbo_counter
+
+:global int museum_launch
+
+begincycle:
+
+waituntil(current_step == 2 & current_package == museum_package_id)
+gotoif(skip, isopen("museum") == false | museum_launch == 0)
+package_executing = 1
+museum_launch = 0
+executesync("combine new stones")
+stop("combine new stones")
+package_executing = 0
+
+waituntil(current_step == 3 & current_package == museum_package_id)
+gotoif(skip, isopen("museum") == false | museum_launch == 0)
+package_executing = 1
+executesync("recombine inventory")
+stop("recombine inventory")
+package_executing = 0
+
+skip:
+
+goto(begincycle)
