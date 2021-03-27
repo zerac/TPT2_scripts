@@ -1,2 +1,13 @@
+:global int museum_run_counter
+:global int museum_last_run_counter
+
+gotoif(skip, museum_run_counter <= museum_last_run_counter)
+
+museum_last_run_counter = museum_run_counter
+
 move("inventory", 0, "equipped")
 move("inventory", 1, "equipped")
+
+skip:
+
+wait(0.0)

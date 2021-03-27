@@ -4,6 +4,7 @@
 :global string museum_element
 :global int museum_buy_maxtier
 :global int museum_combine_maxtier
+:global int museum_run_counter
 
 
 cycleloop:
@@ -17,7 +18,8 @@ combine += 1
 combine(museum_combine_maxtier)
 gotoif(combineloop, combine < 11)
 
-gotoif(cycleloop, cycle < 10)
+gotoif(cycleloop, cycle < 50000)
 
-move("inventory", 0, "equipped")
-move("inventory", 1, "equipped")
+museum_run_counter += 1
+
+wait(0.0)

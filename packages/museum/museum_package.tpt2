@@ -5,6 +5,11 @@
 :global int turbo_counter
 
 :global int museum_launch
+:global museum_run_counter
+:global museum_last_run_counter
+
+museum_run_counter = 0
+museum_last_run_counter = 0
 
 begincycle:
 
