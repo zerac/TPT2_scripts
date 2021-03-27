@@ -1,0 +1,2 @@
+move("inventory", 0, "equipped")
+move("inventory", 1, "equipped")

@@ -1,5 +1,3 @@
-:local int combines
-
 :global int current_step
 :global int current_package
 :global int museum_package_id
@@ -10,26 +8,26 @@
 
 begincycle:
 
-waituntil(current_step == 2 & current_package == museum_package_id)
+waituntil(current_step == 1 & current_package == museum_package_id)
 gotoif(skip, isopen("museum") == false | museum_launch == 0)
 package_executing = 1
 museum_launch == 0
-combineloop:
-combines += 1
-
 executesync("combine new stones")
 stop("combine new stones")
-gotoif(combineloop, combines < 11)
+package_executing = 0
 
+waituntil(current_step == 2 & current_package == museum_package_id)
+gotoif(skip, isopen("museum") == false)
+package_executing = 1
+executesync("move new stones")
+stop("move new stones")
 package_executing = 0
 
 waituntil(current_step == 3 & current_package == museum_package_id)
 gotoif(skip, isopen("museum") == false)
 package_executing = 1
-
 ;executesync("recombine inventory")
 ;stop("recombine inventory")
-
 package_executing = 0
 
 skip:

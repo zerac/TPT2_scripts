@@ -19,5 +19,5 @@ gotoif(combineloop, combine < 11)
 
 gotoif(cycleloop, cycle < 10)
 
+move("inventory", 0, "equipped")
 move("inventory", 1, "equipped")
-move("inventory", 2, "equipped")
