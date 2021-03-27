@@ -13,7 +13,7 @@ begincycle:
 waituntil(current_step == 2 & current_package == museum_package_id)
 gotoif(skip, isopen("museum") == false | museum_launch == 0)
 package_executing = 1
-
+museum_launch == 0
 combineloop:
 combines += 1
 
@@ -24,7 +24,7 @@ gotoif(combineloop, combines < 11)
 package_executing = 0
 
 waituntil(current_step == 3 & current_package == museum_package_id)
-gotoif(skip, isopen("museum") == false | museum_launch == 0)
+gotoif(skip, isopen("museum") == false)
 package_executing = 1
 
 ;executesync("recombine inventory")
