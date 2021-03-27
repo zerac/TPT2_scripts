@@ -1,13 +1,15 @@
 :global int museum_launch
 :global string museum_element
-:global int museum_maxtier
+:global int museum_buy_maxtier
+:global int museum_combine_maxtier
 
 key.p()
 
 isopen("museum")
 
 museum_element = "darkness"
-museum_maxtier = 19
+museum_buy_maxtier = 19
+museum_combine_maxtier = 30
 
 waitwhile("You can edit previous lines, but don't the lines bellow" == "")
 gotoif(turnoff, museum_launch == 1)
