@@ -18,7 +18,7 @@ The script should provide easy way to create tier +12 stores from original - thi
 
 ## Dependencies
 
-Requires 22 lines unlocked
+Requires 20 lines unlocked
 
 **!!! vvv REQUIRED vvv !!!**
 
