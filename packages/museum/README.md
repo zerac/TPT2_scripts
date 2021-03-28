@@ -5,7 +5,7 @@ This package automates powerstone buying / combining in museum.
 To use this package, first modify the `launch museum craft` script with the `museum_element`, `museum_buy_maxtier` and `museum_combine_maxtier` you want.
 Elements are fire, water, earth, air, electricity, light, darkness, nature, universal.
 
-Once you've set all you want, launch the AI, go to the museum, then press the "p" key (impulse can be changed in the `launch factory craft` script).
+Once you've set all you want, launch the AI, go to the museum, then press the "p" key (impulse can be changed in the `launch museum craft` script).
 Make sure you have enough money to buy stones, or script wont do anything. Can be launched from both inventory or buy/market screen.
 
 WARNING: If the market stock changes during run of the script, it will not be recognized, and script will keep buying the stones.
