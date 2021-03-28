@@ -1,4 +1,4 @@
-# Factory package
+# Museum package
 
 This package automates powerstone buying / combining in museum.
 
