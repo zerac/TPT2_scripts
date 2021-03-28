@@ -8,6 +8,12 @@ Elements are fire, water, earth, air, electricity, light, darkness, nature, univ
 Once you've set all you want, launch the AI, go to the museum, then press the "p" key (impulse can be changed in the `launch museum craft` script).
 Make sure you have enough money to buy stones, or script wont do anything. Can be launched from both inventory or buy/market screen.
 
+The script with buy stones from market and combine them in inventory.
+It is set to move first 2 stones into 'equipped' inventory after while.
+If there is no space in 'equipped', it will continue combining in inventory until no further combinations are possible.
+
+NOTE: You need to turn off the script manually - this can be done either by pressing 'p' again , or turning AI off/on again. If you leave museum, the script will run but do nothing.
+
 WARNING: If the market stock changes during run of the script, it will not be recognized, and script will keep buying the stones.
 Therefore it is highly recommended to set the museum_buy_maxtier to avoid losing your money on too high tier powerstones.
 
