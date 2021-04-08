@@ -4,14 +4,14 @@ This package automates powerstone buying / combining in museum.
 
 To use this package, first modify in the `launch museum craft` script following attributes:
 
-`museum_element` : which element to buy/move/clean ( defaut = `darkness` )
-`museum_buy_maxtier` : max tier of element bought in market ( default = `19` )
-`museum_combine_maxtier` : max tier allowed in combine ( default = `museum_buy_maxtier + 13` )
-`museum_combine_movetier` : tier of stones automatically moved into equipped ( default = `museum_buy_maxtier + 11` )
-   NOTE: This is necessary to avoid locking-up inventory because no more combinations are possible.
-`museum_combine_maxloop` : this will increase buy/combine loop max for each cycle, change if your game lags too much / not enough ( default = `500` )
-`museum_clean_on_end` : set to 0 or 1. Cleans inventory from all `element` stones lower than `movetier-1` after end of script, triggered also by 'p' key while it is running ( default = `1` )
-   NOTE: Does not work if you turn off script by F4.
+* `museum_element` : which element to buy/move/clean ( defaut = `darkness` ) 
+* `museum_buy_maxtier` : max tier of element bought in market ( default = `19` ) 
+* `museum_combine_maxtier` : max tier allowed in combine ( default = `museum_buy_maxtier + 13` ) 
+* `museum_combine_movetier` : tier of stones automatically moved into equipped ( default = `museum_buy_maxtier + 11` ) 
+   * NOTE: This is necessary to avoid locking-up inventory because no more combinations are possible. 
+* `museum_combine_maxloop` : this will increase buy/combine loop max for each cycle, change if your game lags too much / not enough ( default = `500` )
+* `museum_clean_on_end` : set to 0 or 1. Cleans inventory from all `element` stones lower than `movetier-1` after end of script, triggered also by 'p' key while it is running ( default = `1` )
+   * NOTE: Does not work if you turn off script by F4.
 
 Elements are fire, water, earth, air, electricity, light, darkness, nature, universal.
 
@@ -22,9 +22,9 @@ The script will buy stones from market and combine them in inventory.
 It is set to move first 2 stones into 'equipped' inventory when they hit `museum_combine_movetier` tier.
 If there is no space in 'equipped', it will continue combining in inventory until no further combinations are possible.
 
-NOTE: You need to turn off the script manually - this can be done either by pressing 'p' again , or turning AI off/on again. If you leave museum, the script will run but do nothing.
+*NOTE: You need to turn off the script manually - this can be done either by pressing 'p' again , or turning AI off/on again. If you leave museum, the script will run but do nothing.*
 
-WARNING: If the market stock changes during run of the script, it will not be recognized, and script will keep buying the stones.
+**WARNING**: If the market stock changes during run of the script, it will not be recognized, and script will keep buying the stones.
 Therefore it is highly recommended to set the `museum_buy_maxtier` to avoid losing your money on too high tier powerstones.
 
 The script should provide easy way to create tier +12 stores from original - this depends on available 'equipped' inventory for recombination (NOTE: This functionality is TBD)
