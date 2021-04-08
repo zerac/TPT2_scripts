@@ -1,11 +1,12 @@
-:global int museum_run_counter
-:global int museum_last_run_counter
+:global string museum_element
+:global int museum_combine_movetier
 
-gotoif(skip, museum_run_counter <= museum_last_run_counter)
-
-museum_last_run_counter = museum_run_counter
-
+gotoif(move1, tier("inventory", 0) < museum_combine_movetier | element("inventory", 0) != museum_element)
 move("inventory", 0, "equipped")
+
+move1:
+
+gotoif(skip, tier("inventory", 1) < museum_combine_movetier | element("inventory", 1) != museum_element)
 move("inventory", 1, "equipped")
 
 skip:

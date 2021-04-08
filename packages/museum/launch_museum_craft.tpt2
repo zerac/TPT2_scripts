@@ -1,9 +1,13 @@
+:local int clean
+:local int cleantier
+
 :global int museum_launch
 :global string museum_element
 :global int museum_buy_maxtier
 :global int museum_combine_maxtier
-:global int museum_run_counter
-:global int museum_last_run_counter
+:global int museum_combine_movetier
+:global int museum_combine_maxloop
+:global int museum_clean_on_end
 
 key.p()
 
@@ -11,9 +15,11 @@ isopen("museum")
 
 museum_element = "darkness"
 museum_buy_maxtier = 19
-museum_combine_maxtier = 30
-museum_run_counter = 0
-museum_last_run_counter = 0
+museum_combine_maxtier = museum_buy_maxtier + 13
+museum_combine_movetier = museum_buy_maxtier + 11
+
+museum_combine_maxloop = 500
+museum_clean_on_end = 1
 
 waitwhile("You can edit previous lines, but don't the lines bellow" == "")
 gotoif(turnoff, museum_launch == 1)
@@ -23,9 +29,17 @@ goto(wait)
 turnoff:
 
 museum_launch = 0
-museum_run_counter = 0
-museum_last_run_counter = 0
+clean = 0
+cleantier = museum_combine_movetier - 2
+gotoif(wait, museum_clean_on_end == 0)
+
+cleanloop:
+gotoif(cleannext, tier("inventory", clean) > cleantier | element("inventory", clean) != museum_element)
+delete("inventory", clean)
+
+cleannext:
+clean += 1
+gotoif(cleanloop, clean < 24)
 
 wait:
-
 wait(0.0)
