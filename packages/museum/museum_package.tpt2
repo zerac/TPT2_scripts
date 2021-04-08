@@ -5,18 +5,13 @@
 :global int turbo_counter
 
 :global int museum_launch
-:global museum_run_counter
-:global museum_last_run_counter
-
-museum_run_counter = 0
-museum_last_run_counter = 0
 
 begincycle:
 
 waituntil(current_step == 1 & current_package == museum_package_id)
 gotoif(skip, isopen("museum") == false | museum_launch == 0)
 package_executing = 1
-museum_launch == 0
+museum_launch = 0
 executesync("combine new stones")
 stop("combine new stones")
 package_executing = 0
