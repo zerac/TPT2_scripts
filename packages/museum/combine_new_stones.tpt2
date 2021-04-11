@@ -1,6 +1,7 @@
 :local int cycle
 :local int combine
 
+:global int museum_market_available
 :global string museum_element
 :global int museum_buy_maxtier
 :global int museum_combine_maxtier
@@ -10,6 +11,12 @@ cycleloop:
 cycle += 1
 
 fill(true)
+
+gotoif(market, museum_market_available == 1)
+buy(museum_element)
+goto(combineloop)
+
+market:
 buyMarket(museum_element, museum_buy_maxtier)
 
 combineloop:
