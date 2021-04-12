@@ -6,7 +6,7 @@ To use this package, first modify in the `launch museum craft` script following 
 
 * `museum_market_available` : is offshore market available? `1` = yes `0` = no ( default = `1` )
 * `museum_element` : which element to buy/move/clean ( defaut = `darkness` ) 
-* `museum_buy_maxtier` : max tier of element bought in market ( default = `19` ) 
+* `museum_buy_maxtier` : tier of element you want to buy in market ( default = `19` ) 
 * `museum_combine_maxtier` : max tier allowed in combine ( default = `museum_buy_maxtier + 13` ) 
 * `museum_combine_movetier` : tier of stones automatically moved into equipped ( default = `museum_buy_maxtier + 11` ) 
    * NOTE: This is necessary to avoid locking-up inventory because no more combinations are possible. 
@@ -28,13 +28,16 @@ If there is no space in 'equipped', it will continue combining in inventory unti
 **WARNING**: If the market stock changes during run of the script, it will not be recognized, and script will keep buying the stones.
 Therefore it is highly recommended to set the `museum_buy_maxtier` to avoid losing your money on too high tier powerstones.
 
+**WARNING**: Turbo exec might mess with your other scripts, that are not updated to be used together with turbo (mostly scripts using WAIT X seconds). If you encounter this, disabling `master` script from Execution stack will turn off turbo. NOTE: Disabling master will disable museum/factory packages relying on it.
+
 The script should provide easy way to create tier +12 stores from original - this depends on available 'equipped' inventory for recombination (NOTE: This functionality is TBD)
 
 **WHAT TO CHECK BEFORE RUNNING**:
+* Have you imported the Execution stack dependancy (see **REQUIRED** link below)
 * Are all AI scripts enabled after import 
 * Do you have museum market available (if not, change `museum_market_available` to `0`)
 * Is the `museum_element` available in market
-* Is the element's tier <= `museum_buy_maxtier` (if not, increase it in launch script)
+* Is the element's tier in market = `museum_buy_maxtier` (if not, change it in launch script)
 * Do you have enough resources to buy the stones
 
 
